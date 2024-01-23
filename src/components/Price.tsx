@@ -17,15 +17,18 @@ function Price(data : TesteProps) {
   };
 
   return (
-    <PriceContainer>
-      <input type="number" value={ quantity } onChange={ handleChange } />
-      <p>
-        O valor total é:
-        {' '}
-        {calculateValue(data.data[0].quote.USD.price).toLocaleString('pt-BR', {
-          style: 'currency', currency: 'USD' })}
-      </p>
-    </PriceContainer>
+    <>
+      <h2>Verifique o valor de cada unidade</h2>
+      <PriceContainer>
+        <input type="number" value={ quantity } onChange={ handleChange } />
+        <p>
+          O valor total é:
+          {' '}
+          {calculateValue(data.data[0].quote.USD.price).toLocaleString('pt-BR', {
+            style: 'currency', currency: 'USD' })}
+        </p>
+      </PriceContainer>
+    </>
   );
 }
 

@@ -19,6 +19,7 @@ function Search() {
 
   return (
     <SearchContainer>
+      <h2>Procure uma criptomoeda para mais informações</h2>
       <div>
         <input
           type="search"
