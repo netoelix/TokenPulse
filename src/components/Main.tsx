@@ -5,6 +5,7 @@ import { AnyAction } from 'redux';
 import { fetchData } from '../redux/actions/action';
 import { DataItem } from '../utils/functionsAPI';
 import { dataApi } from '../utils/data';
+import { MainContainer } from '../styles/StyleMain';
 
 function Main() {
   const [sortColumn, setSortColumn] = useState<string | null>(null);
@@ -64,7 +65,7 @@ function Main() {
   });
 
   return (
-    <main>
+    <MainContainer>
       <div>
         {dataNew === null ? <p>Carregando</p>
           : (
@@ -87,7 +88,7 @@ function Main() {
               </thead>
               <tbody>
                 {sortedDataNew.map((item: DataItem | any, index: number) => (
-                  <tr key={ index }>
+                  <tr key={ index } className="hoverElement">
                     <td>{index + 1}</td>
                     <td>{item.name}</td>
                     <td>
@@ -111,7 +112,7 @@ function Main() {
             </table>
           )}
       </div>
-    </main>
+    </MainContainer>
   );
 }
 
