@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { dataApi } from '../utils/data';
 import { DataItem } from '../utils/functionsAPI';
 import Price from './Price';
+import { SearchContainer } from '../styles/StyleSearch';
 
 function Search() {
   const [searchTerm, setSearchTerm] = useState('');
@@ -17,7 +18,7 @@ function Search() {
   };
 
   return (
-    <section>
+    <SearchContainer>
       <input
         type="search"
         value={ searchTerm }
@@ -42,7 +43,7 @@ function Search() {
           )}
         <tbody>
           {filteredData.map((item: DataItem | any, index: number) => (
-            <tr key={ index }>
+            <tr key={ index } className="hoverElement">
               <td>{index + 1}</td>
               <td>{item.name}</td>
               <td>
@@ -65,7 +66,7 @@ function Search() {
         </tbody>
       </table>
       {hasSearched && <Price data={ filteredData } />}
-    </section>
+    </SearchContainer>
   );
 }
 
