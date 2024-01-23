@@ -19,12 +19,14 @@ function Search() {
 
   return (
     <SearchContainer>
-      <input
-        type="search"
-        value={ searchTerm }
-        onChange={ (e) => setSearchTerm(e.target.value) }
-      />
-      <button onClick={ handleSearch }>Pesquisar</button>
+      <div>
+        <input
+          type="search"
+          value={ searchTerm }
+          onChange={ (e) => setSearchTerm(e.target.value) }
+        />
+        <button onClick={ handleSearch }>Pesquisar</button>
+      </div>
       <table>
         {filteredData.length === 0 ? ''
           : (

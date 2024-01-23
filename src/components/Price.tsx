@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { PriceContainer } from '../styles/StylePrice';
 
 interface TesteProps {
   priceAPI: number;
@@ -16,14 +17,15 @@ function Price(data : TesteProps) {
   };
 
   return (
-    <div>
+    <PriceContainer>
       <input type="number" value={ quantity } onChange={ handleChange } />
       <p>
         O valor total é:
+        {' '}
         {calculateValue(data.data[0].quote.USD.price).toLocaleString('pt-BR', {
           style: 'currency', currency: 'USD' })}
       </p>
-    </div>
+    </PriceContainer>
   );
 }
 
