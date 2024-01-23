@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { PriceContainer } from '../styles/StylePrice';
 
 interface TesteProps {
+  data: any;
   priceAPI: number;
 }
 

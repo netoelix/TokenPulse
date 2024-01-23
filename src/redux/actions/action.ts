@@ -1,4 +1,5 @@
-import { getAll, ApiResponse } from '../../utils/functionsAPI';
+import { ApiResponse } from '../../types';
+import { getAll } from '../../utils/functionsAPI';
 
 export const FETCH_DATA_SUCCESS = 'FETCH_DATA_SUCCESS';
 

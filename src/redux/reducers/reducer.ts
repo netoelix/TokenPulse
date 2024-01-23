@@ -1,4 +1,4 @@
-import { DataItem } from '../../utils/functionsAPI';
+import { DataItem } from '../../types';
 import { FETCH_DATA_SUCCESS } from '../actions/action';
 
 interface State {

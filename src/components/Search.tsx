@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { dataApi } from '../utils/data';
-import { DataItem } from '../utils/functionsAPI';
 import Price from './Price';
 import { SearchContainer } from '../styles/StyleSearch';
+import { DataItem } from '../types';
 
 function Search() {
   const [searchTerm, setSearchTerm] = useState('');
@@ -45,9 +45,11 @@ function Search() {
             </thead>
           )}
         <tbody>
-          {filteredData.map((item: DataItem | any, index: number) => (
+          {filteredData.slice(0, 1).map((item: DataItem | any, index: number) => (
             <tr key={ index } className="hoverElement">
-              <td>{index + 1}</td>
+              <td>
+                {index + 1}
+              </td>
               <td>{item.name}</td>
               <td>
                 {item.quote.USD.price.toLocaleString('pt-BR', {

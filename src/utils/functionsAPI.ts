@@ -1,37 +1,4 @@
-export interface Quote {
-  USD: {
-    price: number;
-    percent_change_1h: number;
-    percent_change_24h: number;
-    percent_change_7d: number;
-    volume_24h: number;
-    market_cap: number;
-  };
-}
-
-export interface DataItem {
-  id: number;
-  name: string;
-  symbol: string;
-  slug: string;
-  cmc_rank: number;
-  num_market_pairs: number;
-  circulating_supply: number;
-  total_supply: number;
-  max_supply: number;
-  infinite_supply: null | number;
-  last_updated: string;
-  date_added: string;
-  tags: string[];
-  platform: null | string;
-  self_reported_circulating_supply: null | number;
-  self_reported_market_cap: null | number;
-  quote: Quote;
-}
-
-export interface ApiResponse {
-  data: DataItem[];
-}
+import { ApiResponse } from '../types';
 
 export async function getAll(): Promise<ApiResponse> {
   const response = await fetch('http://localhost:3000/getAll');
