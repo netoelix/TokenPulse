@@ -1,7 +1,10 @@
+import Navigation from './Navigation';
+
 function Header() {
   return (
     <header>
       <h1>TokenPulse</h1>
+      <Navigation />
     </header>
   );
 }
