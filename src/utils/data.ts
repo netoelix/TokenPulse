@@ -1,4 +1,4 @@
-const data = {
+export const dataApi = {
   status: {
     timestamp: '2024-01-23T17:37:39.430Z',
     error_code: 0,
