@@ -1,16 +1,19 @@
 import { useState } from 'react';
 import { dataApi } from '../utils/data';
 import { DataItem } from '../utils/functionsAPI';
+import Price from './Price';
 
 function Search() {
   const [searchTerm, setSearchTerm] = useState('');
   const [filteredData, setFilteredData] = useState([]);
+  const [hasSearched, setHasSearched] = useState(false);
   const dataNew = dataApi.data;
 
   const handleSearch = () => {
     const result = dataNew.filter((item: any) => item
       .name.toLowerCase().includes(searchTerm.toLowerCase()));
     setFilteredData(result);
+    setHasSearched(true);
   };
 
   return (
@@ -22,18 +25,21 @@ function Search() {
       />
       <button onClick={ handleSearch }>Pesquisar</button>
       <table>
-        <thead>
-          <tr>
-            <th>#</th>
-            <th>Moeda</th>
-            <th>Preço</th>
-            <th>1h</th>
-            <th>24h</th>
-            <th>7d</th>
-            <th>Volume em 24h</th>
-            <th>Capitalização de mercado</th>
-          </tr>
-        </thead>
+        {filteredData.length === 0 ? ''
+          : (
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Moeda</th>
+                <th>Preço</th>
+                <th>1h</th>
+                <th>24h</th>
+                <th>7d</th>
+                <th>Volume em 24h</th>
+                <th>Capitalização de mercado</th>
+              </tr>
+            </thead>
+          )}
         <tbody>
           {filteredData.map((item: DataItem | any, index: number) => (
             <tr key={ index }>
@@ -58,6 +64,7 @@ function Search() {
           ))}
         </tbody>
       </table>
+      {hasSearched && <Price data={ filteredData } />}
     </section>
   );
 }
