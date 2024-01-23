@@ -1,5 +1,31 @@
+export interface Quote {
+  USD: {
+    price: number;
+  };
+}
+
+export interface DataItem {
+  id: number;
+  name: string;
+  symbol: string;
+  slug: string;
+  cmc_rank: number;
+  num_market_pairs: number;
+  circulating_supply: number;
+  total_supply: number;
+  max_supply: number;
+  infinite_supply: null | number;
+  last_updated: string;
+  date_added: string;
+  tags: string[];
+  platform: null | string;
+  self_reported_circulating_supply: null | number;
+  self_reported_market_cap: null | number;
+  quote: Quote;
+}
+
 export interface ApiResponse {
-  // Adicione aqui os campos que você espera na resposta da API
+  data: DataItem[];
 }
 
 export async function getAll(): Promise<ApiResponse> {

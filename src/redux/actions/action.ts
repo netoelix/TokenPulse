@@ -8,6 +8,6 @@ const fetchDataSuccess = (data: ApiResponse) => ({
 });
 
 export const fetchData = () => async (dispatch: any) => {
-  const data = await getAll();
+  const data: ApiResponse = await getAll();
   dispatch(fetchDataSuccess(data));
 };

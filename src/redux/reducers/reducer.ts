@@ -1,8 +1,8 @@
-import { ApiResponse } from '../../utils/functionsAPI';
+import { DataItem } from '../../utils/functionsAPI';
 import { FETCH_DATA_SUCCESS } from '../actions/action';
 
 interface State {
-  data: ApiResponse | null;
+  data: DataItem[] | null;
 }
 
 const initialState: State = {
@@ -14,7 +14,7 @@ const myReducer = (state = initialState, action: { type: string; payload: any; }
     case FETCH_DATA_SUCCESS:
       return {
         ...state,
-        data: action.payload,
+        data: action.payload.data,
       };
     default:
       return state;
