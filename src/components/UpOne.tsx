@@ -13,6 +13,7 @@ function UpOne({ data, handleFavorite, favorites }: TableProps) {
     <UpOneContainer>
       <h1>The highest values in:</h1>
       <select
+        data-testid="select"
         value={ selectedValue }
         onChange={ (e) => setSelectedValue(e.target.value) }
       >

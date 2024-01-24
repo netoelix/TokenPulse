@@ -69,3 +69,21 @@ describe('Testes da API', () => {
     expect(thirdCoin).toBeInTheDocument();
   });
 });
+
+describe('Testes de renderização', () => {
+  beforeEach(() => {
+    mockFetchApi = setupFetchMockAndRender(dataApi, <App />);
+  });
+  afterEach(() => vi.clearAllMocks());
+
+  it('Testa a renderização dos itens', async () => {
+    const favoriteBtn = await screen.findAllByTestId('favorite-btn');
+    expect(favoriteBtn).toHaveLength(105);
+    const searchBtn = await screen.findByTestId('search-btn');
+    expect(searchBtn).toBeInTheDocument();
+    const inputSearch = await screen.findByTestId('input-search');
+    expect(inputSearch).toBeInTheDocument();
+    const select = await screen.findByTestId('select');
+    expect(select).toBeInTheDocument();
+  });
+});
