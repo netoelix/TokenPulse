@@ -2,7 +2,7 @@ import { ThunkDispatch } from 'redux-thunk';
 import { AnyAction } from 'redux';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
-import { dataApi } from '../utils/data';
+// import { dataApi } from '../utils/data';
 import { MainContainer } from '../styles/StyleMain';
 import { useFavorites } from '../utils/functions';
 import Table from './Table';

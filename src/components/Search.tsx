@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { ThunkDispatch } from 'redux-thunk';
 import { AnyAction } from 'redux';
 import { useDispatch, useSelector } from 'react-redux';
-import { dataApi } from '../utils/data';
+// import { dataApi } from '../utils/data';
 import { SearchContainer } from '../styles/StyleSearch';
 import { DataItem, RootState, TableProps } from '../types';
 import { formatNumber } from '../utils/functions';
@@ -47,6 +47,7 @@ function Search({ handleFavorite, favorites }: TableProps) {
           type="search"
           value={ searchValue }
           onChange={ (e) => setSearchValue(e.target.value) }
+          placeholder="Find a coin"
         />
         <button
           data-testid="search-btn"

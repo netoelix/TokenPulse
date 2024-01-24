@@ -17,7 +17,7 @@ export const UpOneContainer = styled.article`
     }
 
     select {
-        width: 150px;
+        width: 190px;
         height: 70px;
         background-color: #14213D;
         border: 2px solid #FCA311;
