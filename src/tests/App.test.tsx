@@ -92,6 +92,7 @@ describe('Testes de renderização', () => {
 describe('Testes de funcionalidade', () => {
   beforeEach(() => {
     mockFetchApi = setupFetchMockAndRender(dataApi, <App />);
+    localStorage.clear();
   });
   afterEach(() => vi.clearAllMocks());
 
@@ -126,5 +127,31 @@ describe('Testes de funcionalidade', () => {
     expect(ethereum).toHaveLength(2);
     const nearProtocol = await screen.findAllByText('Ronin');
     expect(nearProtocol).toHaveLength(2);
+  });
+});
+
+describe('Testes do botão de favoritar', () => {
+  beforeEach(() => {
+    mockFetchApi = setupFetchMockAndRender(dataApi, <App />);
+    localStorage.clear();
+  });
+  // afterEach(() => vi.clearAllMocks());
+
+  it('Testa se o botão de favoritar está funcionando', async () => {
+    const favoriteBtn = await screen.findAllByTestId('favorite-btn');
+    const favoritePage = await screen.findByText('Favorites');
+    expect(favoritePage).toBeInTheDocument();
+    expect(favoriteBtn).toHaveLength(105);
+    const firstFavoriteBtn = favoriteBtn[0];
+    await userEvent.click(firstFavoriteBtn);
+    await userEvent.click(favoritePage);
+    const coin = await screen.findByText('Manta Network');
+    expect(coin).toBeInTheDocument();
+    expect(await screen.findByText('Value: US$ 2,44')).toBeInTheDocument();
+    expect(await screen.findByText('Saved cryptocurrencies.')).toBeInTheDocument();
+
+    const secondFavoriteBtn = await screen.findByTestId('favorite-btn');
+    await userEvent.click(secondFavoriteBtn);
+    expect(await screen.findByText('No saved cryptocurrencies found.')).toBeInTheDocument();
   });
 });
