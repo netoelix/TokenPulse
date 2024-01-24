@@ -3,4 +3,4 @@ buil:
     web: Dockerfile
 
 run:
-  web: src/utils/requestApi.js
+  web: node src/utils/requestApi.js
