@@ -3,7 +3,7 @@ import { applyMiddleware, combineReducers, legacy_createStore } from 'redux';
 import thunk from 'redux-thunk';
 import myReducer from './reducers/reducer';
 
-const reducer = combineReducers({
+export const reducer = combineReducers({
   myReducer,
 });
 
