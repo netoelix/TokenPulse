@@ -1,1 +1,1 @@
-web: gunicorn requestApi:app
+web: node src/utils/requestApi.js
