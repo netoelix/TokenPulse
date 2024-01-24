@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { ThunkDispatch } from 'redux-thunk';
 import { AnyAction } from 'redux';
 import { useDispatch, useSelector } from 'react-redux';
-import { dataApi } from '../utils/data';
+// import { dataApi } from '../utils/data';
 import { SearchContainer } from '../styles/StyleSearch';
 import { DataItem, RootState, TableProps } from '../types';
 import { formatNumber } from '../utils/functions';
