@@ -21,7 +21,12 @@ function Price(data : TesteProps) {
     <>
       <h2>Verifique o valor de cada unidade</h2>
       <PriceContainer>
-        <input type="number" value={ quantity } onChange={ handleChange } />
+        <input
+          className="inputPrice"
+          type="number"
+          value={ quantity }
+          onChange={ handleChange }
+        />
         <p>
           O valor total é:
           {' '}

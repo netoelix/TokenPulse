@@ -1,29 +1,31 @@
 import styled from 'styled-components';
 
-export const MainContainer = styled.main`
+export const FavoriteContainer = styled.main`
     display: flex;
+    flex-direction: column;
     flex-wrap: wrap;
     align-content: center;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(90deg, transparent 50%,
-    rgba(252,163,17,1) 20%);
-
+    background: linear-gradient(290deg, rgba(252,163,17,1) 20%, transparent 10%,
+    transparent 100%);
+    height: 100vh;
+    h2 {
+        margin: 50px;
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.774);
+    }
     table {
         border-spacing: 0;
         background-color: #14213D;
         padding: 20px;
-        border-radius: 10px;
+        border-radius: 30px;
         border: 1px solid #FCA311;
-        box-shadow: rgba(14, 30, 37, 0.12) 
-        0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
     }
     .hoverElement:hover {
         background-color: grey;
     }
     th:hover{
         cursor: pointer;
-        box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
     }
     th {
         border-top: 1px solid #FCA311;
@@ -34,7 +36,6 @@ export const MainContainer = styled.main`
         border-top: 1px solid #FCA311;
         padding: 10px;
         font-size: 20px;
-        box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
     }
     button {
         background-color: transparent;

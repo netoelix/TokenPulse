@@ -1,11 +1,12 @@
+import { HeaderContainer } from '../styles/StyleHeader';
 import Navigation from './Navigation';
 
 function Header() {
   return (
-    <header>
+    <HeaderContainer>
       <h1>TokenPulse</h1>
       <Navigation />
-    </header>
+    </HeaderContainer>
   );
 }
 

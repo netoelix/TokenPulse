@@ -3,6 +3,7 @@ import { dataApi } from '../utils/data';
 import { MainContainer } from '../styles/StyleMain';
 import { useFavorites, useSort } from '../utils/functions';
 import Table from '../components/Table';
+import { FavoriteContainer } from '../styles/StyleFavorites';
 
 function Favorites() {
   const {
@@ -13,7 +14,8 @@ function Favorites() {
   const sortedFavoritesData = sortData(favoritesData);
 
   return (
-    <MainContainer>
+    <FavoriteContainer>
+      <h2>Criptomoedas salvas</h2>
       <div>
         {sortedFavoritesData.length === 0 ? <p>Nenhum favorito encontrado</p>
           : (
@@ -25,7 +27,7 @@ function Favorites() {
             />
           )}
       </div>
-    </MainContainer>
+    </FavoriteContainer>
   );
 }
 
