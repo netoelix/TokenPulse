@@ -1,4 +1,5 @@
 import { ReactNode } from 'react';
+import userEvent from '@testing-library/user-event';
 import { render, screen } from '@testing-library/react';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
@@ -85,5 +86,45 @@ describe('Testes de renderização', () => {
     expect(inputSearch).toBeInTheDocument();
     const select = await screen.findByTestId('select');
     expect(select).toBeInTheDocument();
+  });
+});
+
+describe('Testes de funcionalidade', () => {
+  beforeEach(() => {
+    mockFetchApi = setupFetchMockAndRender(dataApi, <App />);
+  });
+  afterEach(() => vi.clearAllMocks());
+
+  it('Testa a funcionalidade do botão de favoritar', async () => {
+    const favoriteBtn = await screen.findAllByTestId('favorite-btn');
+    expect(favoriteBtn).toHaveLength(105);
+    const firstFavoriteBtn = favoriteBtn[0];
+    expect(firstFavoriteBtn).toBeInTheDocument();
+    expect(firstFavoriteBtn).toHaveAttribute('src', '/src/assets/notFavorite.svg');
+    await userEvent.click(firstFavoriteBtn);
+    expect(firstFavoriteBtn).toHaveAttribute('src', '/src/assets/Favorite.svg');
+  });
+
+  it('Testa a funcionalidade do botão de pesquisar', async () => {
+    const searchBtn = await screen.findByTestId('search-btn');
+    expect(searchBtn).toBeInTheDocument();
+    const inputSearch = await screen.findByTestId('input-search');
+    expect(inputSearch).toBeInTheDocument();
+    await userEvent.type(inputSearch, 'bitcoin');
+    await userEvent.click(searchBtn);
+    const bitcoin = await screen.findAllByText('Bitcoin');
+    expect(bitcoin).toHaveLength(2);
+  });
+
+  it('Testa a funcionalidade do select', async () => {
+    const select = await screen.findByTestId('select');
+    expect(select).toBeInTheDocument();
+    await userEvent.type(select, '1h Change');
+    const bitcoin = await screen.findAllByText('Manta Network');
+    expect(bitcoin).toHaveLength(2);
+    const ethereum = await screen.findAllByText('Stacks');
+    expect(ethereum).toHaveLength(2);
+    const nearProtocol = await screen.findAllByText('Ronin');
+    expect(nearProtocol).toHaveLength(2);
   });
 });
