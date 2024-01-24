@@ -10,9 +10,9 @@ function Favorites() {
 
   return (
     <FavoriteContainer>
-      <h1>Criptomoedas salvas</h1>
+      <h1>Saved cryptocurrencies.</h1>
       <div>
-        {favoritesData.length === 0 ? <p>Nenhum favorito encontrado</p>
+        {favoritesData.length === 0 ? <p>No saved cryptocurrencies found.</p>
           : (
             <Table
               data={ favoritesData }

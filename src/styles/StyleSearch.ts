@@ -8,6 +8,7 @@ export const SearchContainer = styled.article`
     justify-content: center;
     align-items: center;
     padding-top: 180px;
+    margin-bottom: 60px;
 
     h2 {
         text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.774);

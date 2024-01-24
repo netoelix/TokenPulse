@@ -9,6 +9,12 @@ export interface Quote {
   };
 }
 
+export interface RootState {
+  myReducer: {
+    data: DataItem[];
+  };
+}
+
 export interface DataItem {
   id: number;
   name: string;
@@ -27,7 +33,6 @@ export interface FavoriteBTNProps {
 
 export interface PriceProps {
   data: any;
-  priceAPI: number;
 }
 
 export interface TableProps {

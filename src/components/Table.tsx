@@ -17,7 +17,7 @@ function Table({ data, handleFavorite, favorites }: TableProps) {
             />
           </h2>
           <h3>
-            Valor:
+            Value:
             {' '}
             {item.quote.USD.price.toLocaleString('pt-BR', {
               style: 'currency', currency: 'USD' })}
@@ -33,7 +33,7 @@ function Table({ data, handleFavorite, favorites }: TableProps) {
             </span>
           </h3>
           <h4>
-            Capitalização de mercado:
+            Market capitalization:
             {' '}
             {formatNumber(item.quote.USD.market_cap)}
           </h4>

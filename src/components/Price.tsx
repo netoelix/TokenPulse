@@ -16,7 +16,7 @@ function Price(datas : PriceProps) {
 
   return (
     <>
-      <h2>Verifique o valor de cada unidade</h2>
+      <h1>Check the value of each cryptocurrency.</h1>
       <PriceContainer>
         <input
           className="inputPrice"
@@ -25,9 +25,9 @@ function Price(datas : PriceProps) {
           onChange={ handleChange }
         />
         <p>
-          O valor total é:
+          The total value is:
           {' '}
-          {calculateValue(data[0].quote.USD.price).toLocaleString('pt-BR', {
+          {calculateValue(data.quote.USD.price).toLocaleString('pt-BR', {
             style: 'currency', currency: 'USD' })}
         </p>
       </PriceContainer>
