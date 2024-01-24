@@ -56,7 +56,7 @@ function Search({ handleFavorite, favorites }: TableProps) {
       </section>
       {searchResult && (
         <>
-          <div key={ searchResult.id }>
+          <div key={ searchResult.id } className="criptoSearch">
             <h2>
               {searchResult.name}
               <FavoriteBTN
