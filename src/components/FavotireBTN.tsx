@@ -4,12 +4,14 @@ import { FavoriteBTNProps } from '../types';
 
 function FavoriteBTN({ handleFavorite, item, favorites }: FavoriteBTNProps) {
   return (
-    <button onClick={ () => handleFavorite(item.id) }>
+    <button
+      onClick={ () => handleFavorite(item.id) }
+    >
       {favorites.includes(item.id)
         ? (
-          <img src={ favorite } alt="red heart" />
+          <img data-testid="favorite-btn" src={ favorite } alt="red heart" />
         ) : (
-          <img src={ notFavorite } alt="white heart" />
+          <img data-testid="favorite-btn" src={ notFavorite } alt="white heart" />
         )}
     </button>
   );

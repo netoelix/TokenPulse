@@ -19,6 +19,7 @@ function Price(datas : PriceProps) {
       <h1>Check the value of each cryptocurrency.</h1>
       <PriceContainer>
         <input
+          data-testid="input-price"
           className="inputPrice"
           type="number"
           value={ quantity }

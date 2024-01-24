@@ -42,12 +42,15 @@ function Search({ handleFavorite, favorites }: TableProps) {
       <h1>Look for a specific cryptocurrency.</h1>
       <section>
         <input
+          data-testid="input-search"
           className="inputSearch"
           type="search"
           value={ searchValue }
           onChange={ (e) => setSearchValue(e.target.value) }
+          placeholder="Find a coin"
         />
         <button
+          data-testid="search-btn"
           className="btnSearch"
           onClick={ handleSearch }
         >
