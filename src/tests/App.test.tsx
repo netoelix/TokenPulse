@@ -29,7 +29,7 @@ const store = createStore(rootReducer, applyMiddleware(thunk));
 let mockFetchApi;
 console.log(mockFetchApi);
 
-const setupFetchMockAndRender = (data, component) => {
+const setupFetchMockAndRender = (data: any, component: string | number | boolean | JSX.Element | Iterable<ReactNode> | null | undefined) => {
   const MOCK_RESPONSE = {
     ok: true,
     status: 200,
@@ -38,7 +38,7 @@ const setupFetchMockAndRender = (data, component) => {
 
   const mockFetch = vi.spyOn(global, 'fetch').mockImplementation((url) => {
     switch (url) {
-      case 'http://localhost:3033/getAll':
+      case 'http://localhost:3000/getAll':
         return Promise.resolve(MOCK_RESPONSE);
       default:
         return Promise.reject(new Error('not found'));
@@ -49,10 +49,27 @@ const setupFetchMockAndRender = (data, component) => {
   return mockFetch;
 };
 
-it('Renderiza o titulo da pagina', () => {
-  renderWithReduxAndRouter(<App />);
+describe('Teste se a pagina carregando aparece', () => {
+  beforeEach(() => {
+    mockFetchApi = setupFetchMockAndRender(null, <App />);
+  });
+  afterEach(() => vi.clearAllMocks());
 
-  expect(screen.getByText(/tokenpulse/i)).toBeInTheDocument();
+  it('Testa a renderização da pagina carregando', async () => {
+    const loading = await screen.findByText('Loading');
+    expect(loading).toBeInTheDocument();
+  });
+});
+
+describe('Renderização inicial', () => {
+  beforeEach(() => {
+    mockFetchApi = setupFetchMockAndRender(dataApi, <App />);
+  });
+  afterEach(() => vi.clearAllMocks());
+
+  it('Renderiza o titulo da pagina', () => {
+    expect(screen.getByText(/tokenpulse/i)).toBeInTheDocument();
+  });
 });
 
 describe('Testes da API', () => {
@@ -130,12 +147,31 @@ describe('Testes de funcionalidade', () => {
   });
 });
 
+describe('Testa o input serach com um dado invalido', () => {
+  beforeEach(() => {
+    mockFetchApi = setupFetchMockAndRender(dataApi, <App />);
+    localStorage.clear();
+  });
+  afterEach(() => vi.clearAllMocks());
+
+  it('Testa a funcionalidade do botão de pesquisar', async () => {
+    const searchBtn = await screen.findByTestId('search-btn');
+    expect(searchBtn).toBeInTheDocument();
+    const inputSearch = await screen.findByTestId('input-search');
+    expect(inputSearch).toBeInTheDocument();
+    await userEvent.type(inputSearch, 'aaaa');
+    await userEvent.click(searchBtn);
+    const noCoin = await screen.findByText('No results found.');
+    expect(noCoin).toBeInTheDocument();
+  });
+});
+
 describe('Testes do botão de favoritar', () => {
   beforeEach(() => {
     mockFetchApi = setupFetchMockAndRender(dataApi, <App />);
     localStorage.clear();
   });
-  // afterEach(() => vi.clearAllMocks());
+  afterEach(() => vi.clearAllMocks());
 
   it('Testa se o botão de favoritar está funcionando', async () => {
     const favoriteBtn = await screen.findAllByTestId('favorite-btn');

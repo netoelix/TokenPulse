@@ -11,17 +11,17 @@ import { fetchData } from '../redux/actions/action';
 import Price from './Price';
 
 function Search({ handleFavorite, favorites }: TableProps) {
-  // const dispatch: ThunkDispatch<any, any, AnyAction> = useDispatch();
+  const dispatch: ThunkDispatch<any, any, AnyAction> = useDispatch();
 
-  // useEffect(() => {
-  //   dispatch(fetchData());
-  // }, [dispatch]);
+  useEffect(() => {
+    dispatch(fetchData());
+  }, [dispatch]);
 
-  // const dataNew: DataItem[] | null = useSelector(
-  //   (state: RootState) => state.myReducer.data,
-  // );
+  const dataNew: DataItem[] | null = useSelector(
+    (state: RootState) => state.myReducer.data,
+  );
 
-  const dataNew = dataApi.data;
+  // const dataNew = dataApi.data;
   const [searchValue, setSearchValue] = useState('');
   const [searchResult, setSearchResult] = useState<DataItem | null>(null);
   const [errorMessage, setErrorMessage] = useState('');

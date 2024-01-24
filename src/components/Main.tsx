@@ -13,19 +13,19 @@ import Loading from './Loading';
 import UpOne from './UpOne';
 
 function Main() {
-  // const dispatch: ThunkDispatch<any, any, AnyAction> = useDispatch();
+  const dispatch: ThunkDispatch<any, any, AnyAction> = useDispatch();
 
-  // useEffect(() => {
-  //   dispatch(fetchData());
-  // }, [dispatch]);
+  useEffect(() => {
+    dispatch(fetchData());
+  }, [dispatch]);
 
-  // const dataNew: DataItem[] | null = useSelector(
-  //   (state: RootState) => state.myReducer.data,
-  // );
+  const dataNew: DataItem[] | null = useSelector(
+    (state: RootState) => state.myReducer.data,
+  );
 
   const { favorites, handleFavorite } = useFavorites();
 
-  const dataNew = dataApi.data;
+  // const dataNew = dataApi.data;
   // const dataNew = null;
 
   return (
