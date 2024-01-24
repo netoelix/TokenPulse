@@ -9,7 +9,8 @@
     "dev": "vite --open",
     "lint": "eslint -c .eslintrc.json . --ext .js,.jsx,.ts,.tsx",
     "preview": "vite preview",
-    "test": "vitest"
+    "test": "vitest",
+    "start": "node src/utils/requestApi.js"
   },
   "dependencies": {
     "@redux-devtools/extension": "^3.2.5",

@@ -1,0 +1,6 @@
+buil:
+  docker:
+    web: Dockerfile
+
+run:
+  web: src/utils/requestApi.js
