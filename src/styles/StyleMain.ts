@@ -6,35 +6,32 @@ export const MainContainer = styled.main`
     align-content: center;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(90deg, transparent 50%,
-    rgba(252,163,17,1) 20%);
+    /* background: linear-gradient(284deg, rgba(252,163,17,1) 20%, transparent 10%, */
+    transparent 100%);
 
-    table {
-        border-spacing: 0;
+    div {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-content: center;
+        justify-content: center;
+        align-items: flex-start;
+        width: 300px;
+        height: 200px;
+        border: 2px solid #FCA311;
+        border-radius: 10px;
+        margin: 10px;
         background-color: #14213D;
         padding: 20px;
-        border-radius: 10px;
-        border: 1px solid #FCA311;
-        box-shadow: rgba(14, 30, 37, 0.12) 
-        0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
     }
-    .hoverElement:hover {
-        background-color: grey;
-    }
-    th:hover{
-        cursor: pointer;
-        box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
-    }
-    th {
-        border-top: 1px solid #FCA311;
-        padding: 10px;
-        font-size: 20px;
-    }
-    td {
-        border-top: 1px solid #FCA311;
-        padding: 10px;
-        font-size: 20px;
-        box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
+    h2 {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-content: center;
+        justify-content: space-between;
+        align-items: flex-start;
     }
     button {
         background-color: transparent;

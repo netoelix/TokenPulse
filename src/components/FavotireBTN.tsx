@@ -1,11 +1,6 @@
 import notFavorite from '../assets/notFavorite.svg';
 import favorite from '../assets/Favorite.svg';
-
-interface FavoriteBTNProps {
-  handleFavorite: (id: number) => void;
-  item: { id: number };
-  favorites: number[];
-}
+import { FavoriteBTNProps } from '../types';
 
 function FavoriteBTN({ handleFavorite, item, favorites }: FavoriteBTNProps) {
   return (

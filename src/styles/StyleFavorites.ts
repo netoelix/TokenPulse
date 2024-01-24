@@ -10,33 +10,38 @@ export const FavoriteContainer = styled.main`
     background: linear-gradient(290deg, rgba(252,163,17,1) 20%, transparent 10%,
     transparent 100%);
     height: 100vh;
-    h2 {
+
+    h1 {
         margin: 50px;
         text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.774);
     }
-    table {
-        border-spacing: 0;
-        background-color: #14213D;
-        padding: 20px;
-        border-radius: 30px;
-        border: 1px solid #FCA311;
+
+    div {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-content: center;
+        justify-content: center;
+        align-items: flex-start;
+        /* width: 300px; */
+        /* height: 200px; */
+        /* border: 2px solid #FCA311; */
+        /* border-radius: 10px; */
+        /* margin: 10px; */
+        /* background-color: #14213D; */
+        /* padding: 20px; */
     }
-    .hoverElement:hover {
-        background-color: grey;
+
+    h2 {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-content: center;
+        justify-content: space-between;
+        align-items: flex-start;
     }
-    th:hover{
-        cursor: pointer;
-    }
-    th {
-        border-top: 1px solid #FCA311;
-        padding: 10px;
-        font-size: 20px;
-    }
-    td {
-        border-top: 1px solid #FCA311;
-        padding: 10px;
-        font-size: 20px;
-    }
+
     button {
         background-color: transparent;
         border: none;
@@ -46,9 +51,11 @@ export const FavoriteContainer = styled.main`
             height: 20px;
         }
     }
+    
     .negative {
         color: red;
     }
+    
     .positive {
         color: #80ed99;
     }

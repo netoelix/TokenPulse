@@ -1,12 +1,8 @@
 import { useState } from 'react';
 import { PriceContainer } from '../styles/StylePrice';
+import { PriceProps } from '../types';
 
-interface TesteProps {
-  data: any;
-  priceAPI: number;
-}
-
-function Price(data : TesteProps) {
+function Price(datas : PriceProps) {
   const [quantity, setQuantity] = useState(1);
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -16,6 +12,7 @@ function Price(data : TesteProps) {
   const calculateValue = (price: number) => {
     return price * quantity;
   };
+  const { data } = datas;
 
   return (
     <>
@@ -30,7 +27,7 @@ function Price(data : TesteProps) {
         <p>
           O valor total é:
           {' '}
-          {calculateValue(data.data[0].quote.USD.price).toLocaleString('pt-BR', {
+          {calculateValue(data[0].quote.USD.price).toLocaleString('pt-BR', {
             style: 'currency', currency: 'USD' })}
         </p>
       </PriceContainer>

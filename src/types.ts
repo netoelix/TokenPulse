@@ -18,3 +18,20 @@ export interface DataItem {
 export interface ApiResponse {
   data: DataItem[];
 }
+
+export interface FavoriteBTNProps {
+  handleFavorite: (id: number) => void;
+  item: { id: number };
+  favorites: number[];
+}
+
+export interface PriceProps {
+  data: any;
+  priceAPI: number;
+}
+
+export interface TableProps {
+  data: any[];
+  handleFavorite: (id: number) => void;
+  favorites: number[];
+}
