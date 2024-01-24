@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { ThunkDispatch } from 'redux-thunk';
 import { AnyAction } from 'redux';
 import { useDispatch, useSelector } from 'react-redux';
-// import { dataApi } from '../utils/data';
+import { dataApi } from '../utils/data';
 import { SearchContainer } from '../styles/StyleSearch';
 import { DataItem, RootState, TableProps } from '../types';
 import { formatNumber } from '../utils/functions';
@@ -11,17 +11,17 @@ import { fetchData } from '../redux/actions/action';
 import Price from './Price';
 
 function Search({ handleFavorite, favorites }: TableProps) {
-  const dispatch: ThunkDispatch<any, any, AnyAction> = useDispatch();
+  // const dispatch: ThunkDispatch<any, any, AnyAction> = useDispatch();
 
-  useEffect(() => {
-    dispatch(fetchData());
-  }, [dispatch]);
+  // useEffect(() => {
+  //   dispatch(fetchData());
+  // }, [dispatch]);
 
-  const dataNew: DataItem[] | null = useSelector(
-    (state: RootState) => state.myReducer.data,
-  );
+  // const dataNew: DataItem[] | null = useSelector(
+  //   (state: RootState) => state.myReducer.data,
+  // );
 
-  // const dataNew = dataApi.data;
+  const dataNew = dataApi.data;
   const [searchValue, setSearchValue] = useState('');
   const [searchResult, setSearchResult] = useState<DataItem | null>(null);
   const [errorMessage, setErrorMessage] = useState('');
@@ -56,7 +56,7 @@ function Search({ handleFavorite, favorites }: TableProps) {
       </section>
       {searchResult && (
         <>
-          <div key={ searchResult.id }>
+          <div key={ searchResult.id } className="criptoSearch">
             <h2>
               {searchResult.name}
               <FavoriteBTN

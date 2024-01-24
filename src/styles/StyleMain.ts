@@ -1,14 +1,18 @@
 import styled from 'styled-components';
 
-export const MainContainer = styled.main`
+export const MainContainer = styled.section`
     display: flex;
     flex-wrap: wrap;
     align-content: center;
     justify-content: center;
     align-items: center;
-    /* background: linear-gradient(284deg, rgba(252,163,17,1) 20%, transparent 10%, */
-    transparent 100%);
 
+    h1 {
+        font-size: 38px;
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.774);
+        text-align: center;
+        margin-bottom: 10px;
+    }
     div {
         display: flex;
         flex-direction: column;
@@ -40,6 +44,7 @@ export const MainContainer = styled.main`
         img {
             width: 20px;
             height: 20px;
+            cursor: pointer;
         }
     }
     .negative {
@@ -48,4 +53,17 @@ export const MainContainer = styled.main`
     .positive {
         color: #80ed99;
     }
+    .coinsContainer {
+        display: flex;
+        flex-direction: row-reverse;
+        flex-wrap: nowrap;
+        align-content: center;
+        justify-content: center;
+        align-items: flex-start;
+    }
+    @media screen and (max-width: 1000px) {
+        .coinsContainer {
+            flex-wrap: wrap;
+    }
+}
 `;
