@@ -1,6 +1,3 @@
 buil:
   docker:
     web: Dockerfile
-
-run:
-  web: node src/utils/requestApi.js
