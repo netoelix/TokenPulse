@@ -1,6 +1,6 @@
 {
   "name": "tokenpulse",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "private": true,
   "type": "module",
   "scripts": {
@@ -10,7 +10,7 @@
     "lint": "eslint -c .eslintrc.json . --ext .js,.jsx,.ts,.tsx",
     "preview": "vite preview",
     "test": "vitest",
-    "start": "node src/utils/requestApi.js"
+    "start": "node index.js"
   },
   "dependencies": {
     "@redux-devtools/extension": "^3.2.5",
