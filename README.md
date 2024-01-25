@@ -32,7 +32,15 @@ Para começar a usar a aplicação, siga as instruções abaixo.
 
 ## Repositório
 
-[TokenPulse](https://github.com/netoelix/TokenPulse)
+⚙️ [TokenPulse](https://github.com/netoelix/TokenPulse)
+
+---
+
+## Versão publicada (Deploy)
+
+💡 [TokenPulse](https://token-pulse.vercel.app/)
+
+---
 
 ### Clonar o Repositório
 
@@ -71,7 +79,7 @@ Para executar o servidor local, primeiro crie um arquivo .env e adicione a **sua
 npm start
 ```
 
-Isso iniciará o servidor localmente para acesso ao banco de dados da API.
+Isso iniciará o servidor localmente para acesso ao banco de dados da API, é **importante** alterar o URL do arquivo **functionsAPI.ts** para http://localhost:3000/getAll (ou a porta que o servidor escolher).
 
 ### Testes
 
@@ -108,9 +116,15 @@ To get started with the application, follow the instructions below.
 
 ## Repository
 
-[TokenPulse](https://github.com/netoelix/TokenPulse)
+⚙️ [TokenPulse](https://github.com/netoelix/TokenPulse)
 
+---
 
+## Published version (Deploy)
+
+💡 [TokenPulse](https://token-pulse.vercel.app/)
+
+---
 ### Clone the Repository
 
 ```bash
@@ -148,7 +162,7 @@ To run the local server, first create an .env file and add **your API access key
 npm start
 ```
 
-This will start the server locally for access to the API's database.
+This will start the server locally for access to the API's database. It is **important** to change the URL of the **functionsAPI.ts** file to http://localhost:3000/getAll (or whatever port the server chooses).
 
 ### Tests
 
