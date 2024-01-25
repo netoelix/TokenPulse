@@ -14,7 +14,7 @@ const myReducer = (state = initialState, action: { type: string; payload: any; }
     case FETCH_DATA_SUCCESS:
       return {
         ...state,
-        data: action.payload.data,
+        data: action.payload ? action.payload.data : state.data,
       };
     default:
       return state;

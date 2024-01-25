@@ -38,7 +38,7 @@ const setupFetchMockAndRender = (data: any, component: string | number | boolean
 
   const mockFetch = vi.spyOn(global, 'fetch').mockImplementation((url) => {
     switch (url) {
-      case 'http://localhost:3000/getAll':
+      case 'https://tokenpulse-585ae2963e8d.herokuapp.com/getAll':
         return Promise.resolve(MOCK_RESPONSE);
       default:
         return Promise.reject(new Error('not found'));
@@ -49,9 +49,11 @@ const setupFetchMockAndRender = (data: any, component: string | number | boolean
   return mockFetch;
 };
 
+const dataNull: any = null;
+
 describe('Teste se a pagina carregando aparece', () => {
   beforeEach(() => {
-    mockFetchApi = setupFetchMockAndRender(null, <App />);
+    mockFetchApi = setupFetchMockAndRender(dataNull, <App />);
   });
   afterEach(() => vi.clearAllMocks());
 
