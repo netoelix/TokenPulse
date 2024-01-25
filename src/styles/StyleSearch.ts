@@ -78,6 +78,14 @@ export const SearchContainer = styled.article`
         p {
             text-align: center;
         }
+        .inputSearch {
+            width: 230px;
+        }
+        .btnSearch {
+            width: 100px;
+            font-size: 25px;
+            height: 62px;
+        }
         .criptoSearch {
             width: 300px;
             height: 200px;
@@ -98,7 +106,7 @@ export const SearchContainer = styled.article`
         }
     section {
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         flex-wrap: wrap;
         align-content: center;
         justify-content: center;
