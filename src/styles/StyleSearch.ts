@@ -14,28 +14,34 @@ export const SearchContainer = styled.article`
         text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.774);
     }
     .inputSearch {
-        width: 300px;
+        width: 360px;
         font-size: 35px;
         text-align: center;
         padding: 10px;
-        border-radius: 10px;
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
         border: 1px solid #FCA311;
-        margin: 20px;
-        background-color: #14213D;
+        margin: 20px 0px;
+        background-color: #29274c;
         font-weight: bold;
     }
 
     .btnSearch {
-        width: 300px;
+        width: 140px;
         font-size: 35px;
         text-align: center;
         padding: 10px;
-        border-radius: 10px;
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
         border: 1px solid #FCA311;
-        margin: 20px;
+        margin: 20px 0px;
         background-color: #14213D;
         font-weight: bold;
         cursor: pointer;
+    }
+    .btnSearch:hover {
+        background-color: #FCA311;
+        color: #14213D;
     }
     .criptoSearch {
         display: flex;
@@ -46,6 +52,7 @@ export const SearchContainer = styled.article`
         width: 550px;
         height: 380px;
         border: 5px solid #FCA311;
+        margin-bottom: 25px;
         h2 {
             font-size: 65px;
         }
@@ -62,6 +69,7 @@ export const SearchContainer = styled.article`
     }
     p {
         font-size: 25px;
+        font-weight: bold;
     }
     @media screen and (max-width: 1000px) {
         h1 {

@@ -17,7 +17,7 @@ const GlobalStyle = createGlobalStyle`
       right: 0;
       background: linear-gradient(110deg, rgba(252,163,17,1) 20%, rgba(20,33,61,1) 10%,
        rgba(2,0,36,1) 50%);
-      z-index: -1;
+      z-index: -5;
     }
 `;
 export default GlobalStyle;
