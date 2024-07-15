@@ -17,7 +17,7 @@ export const MainContainer = styled.section`
     div {
         display: flex;
         flex-direction: column;
-        flex-wrap: wrap;
+        flex-wrap: nowrap;
         align-content: center;
         justify-content: center;
         align-items: flex-start;
@@ -29,14 +29,16 @@ export const MainContainer = styled.section`
         background-color: #14213D;
         padding: 20px;
     }
-    h2 {
+        h2 {
         width: 100%;
         display: flex;
         flex-direction: row;
-        flex-wrap: wrap;
+        flex-wrap: nowrap;
         align-content: center;
         justify-content: space-between;
-        align-items: flex-start;
+        align-items: center;
+        overflow-wrap: break-word; 
+        word-wrap: break-word;
     }
     button {
         background-color: transparent;
